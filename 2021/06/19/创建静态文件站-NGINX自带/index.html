@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"www.canyi.cc","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一个二三次元飘忽不定的程序员静态文件站-&gt; http:&#x2F;&#x2F;tencent.canyi.cc:23333">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ruomoe">
-<meta property="og:url" content="http://www.canyi.cc/index.html">
+  <meta name="description" content="使用NGINX自带的静态文件 auto index">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建静态文件站[NGINX自带]">
+<meta property="og:url" content="http://www.canyi.cc/2021/06/19/%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E7%AB%99-NGINX%E8%87%AA%E5%B8%A6/index.html">
 <meta property="og:site_name" content="Ruomoe">
-<meta property="og:description" content="一个二三次元飘忽不定的程序员静态文件站-&gt; http:&#x2F;&#x2F;tencent.canyi.cc:23333">
+<meta property="og:description" content="使用NGINX自带的静态文件 auto index">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-19T12:33:42.000Z">
+<meta property="article:modified_time" content="2021-06-19T12:36:02.701Z">
 <meta property="article:author" content="Ruomoe">
+<meta property="article:tag" content="NGINX">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.canyi.cc/">
+<link rel="canonical" href="http://www.canyi.cc/2021/06/19/%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E7%AB%99-NGINX%E8%87%AA%E5%B8%A6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Ruomoe</title>
+  <title>创建静态文件站[NGINX自带] | Ruomoe</title>
   
 
 
@@ -150,9 +153,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -168,10 +172,9 @@
       <meta itemprop="name" content="Ruomoe">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E7%AB%99-NGINX%E8%87%AA%E5%B8%A6/" class="post-title-link" itemprop="url">创建静态文件站[NGINX自带]</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          创建静态文件站[NGINX自带]
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -185,6 +188,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -209,270 +219,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+        <blockquote>
 <p>使用NGINX自带的静态文件 auto index</p>
 </blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/19/%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E7%AB%99-NGINX%E8%87%AA%E5%B8%A6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<span id="more"></span>
+<p>配置如下<br>location 根路径 {<br>    root 网站根路径;<br>    autoindex on;<br>}</p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/NGINX/" rel="tag"># NGINX</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.canyi.cc/2021/06/19/%E5%B9%B2%E6%8E%89JD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ruomoe">
-      <meta itemprop="description" content="一个二三次元飘忽不定的程序员<br>静态文件站-> http://tencent.canyi.cc:23333">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ruomoe">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/%E5%B9%B2%E6%8E%89JD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">干掉JD乱码问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-19 20:24:08 / 修改时间：20:25:45" itemprop="dateCreated datePublished" datetime="2021-06-19T20:24:08+08:00">2021-06-19</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/06/19/%E5%B9%B2%E6%8E%89JD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/19/%E5%B9%B2%E6%8E%89JD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>使用jar版本用cmd使用以下指令打开即可修复乱码.</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/19/%E5%B9%B2%E6%8E%89JD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.canyi.cc/2021/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8F%8D%E5%B0%84%E5%9C%A8%E4%B8%8D%E5%90%8CClassLoader%E5%8A%A0%E8%BD%BDjar%E5%AE%9E%E6%88%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ruomoe">
-      <meta itemprop="description" content="一个二三次元飘忽不定的程序员<br>静态文件站-> http://tencent.canyi.cc:23333">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ruomoe">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8F%8D%E5%B0%84%E5%9C%A8%E4%B8%8D%E5%90%8CClassLoader%E5%8A%A0%E8%BD%BDjar%E5%AE%9E%E6%88%98/" class="post-title-link" itemprop="url">记一次反射在不同ClassLoader加载jar实战</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-15 17:30:55 / 修改时间：19:05:40" itemprop="dateCreated datePublished" datetime="2021-06-15T17:30:55+08:00">2021-06-15</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8F%8D%E5%B0%84%E5%9C%A8%E4%B8%8D%E5%90%8CClassLoader%E5%8A%A0%E8%BD%BDjar%E5%AE%9E%E6%88%98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8F%8D%E5%B0%84%E5%9C%A8%E4%B8%8D%E5%90%8CClassLoader%E5%8A%A0%E8%BD%BDjar%E5%AE%9E%E6%88%98/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>当我们Jvm中存在两个不同的ClassLoader，想要从一个ClassLoader里调用另一个ClassLoader里的Class如何操作<br>此操作很危险，当使用了此方法以后，加载到另一个ClassLoader的类不应再在原来的ClassLoader里使用，否则将找不到此类</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8F%8D%E5%B0%84%E5%9C%A8%E4%B8%8D%E5%90%8CClassLoader%E5%8A%A0%E8%BD%BDjar%E5%AE%9E%E6%88%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/19/%E5%B9%B2%E6%8E%89JD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" rel="prev" title="干掉JD乱码问题">
+      <i class="fa fa-chevron-left"></i> 干掉JD乱码问题
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.canyi.cc/2021/06/15/first-test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ruomoe">
-      <meta itemprop="description" content="一个二三次元飘忽不定的程序员<br>静态文件站-> http://tencent.canyi.cc:23333">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ruomoe">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/15/first-test/" class="post-title-link" itemprop="url">first-test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-15 15:48:03 / 修改时间：19:05:32" itemprop="dateCreated datePublished" datetime="2021-06-15T15:48:03+08:00">2021-06-15</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>测试测试</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/15/first-test/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
